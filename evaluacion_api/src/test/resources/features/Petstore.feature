@@ -8,13 +8,6 @@
 @Order
 Feature: Store
 
-    @ConsultaOrder
-    Scenario: Consulta de Order:
-        Given existe un elemento con ID 6
-        When Consulto el order de ID 6
-        Then Valido el contenido
-        And Valido el codigo respuesta 200
-
     @CrearOrder
     Scenario Outline: Creacion de Order:
         When creo una nueva orden con los datos proporcionados petId "<petId>" y quantity "<quantity>"
@@ -26,6 +19,12 @@ Feature: Store
             | petId | quantity | orderId |
             | 10     | 5        |  101    |
 
+    @ConsultaOrder
+    Scenario: Consulta de Order:
+        Given existe un elemento con ID 6
+        When Consulto el order de ID 6
+        Then Valido el contenido
+        And Valido el codigo respuesta 200
 
 
 
